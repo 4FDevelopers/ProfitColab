@@ -35,7 +35,7 @@
 		<!-- begin:: Page -->
 		<div class="m-grid m-grid--hor m-grid--root m-page">
 			<!-- BEGIN: Header -->
-			<header class="m-grid__item    m-header "  data-minimize-offset="200" data-minimize-mobile-offset="200" >
+			<header class="m-grid__item m-header "  data-minimize-offset="200" data-minimize-mobile-offset="200" >
 				<div class="m-container m-container--fluid m-container--full-height">
 					<div class="m-stack m-stack--ver m-stack--desktop">
 						<!-- BEGIN: Brand -->
@@ -76,7 +76,14 @@
 							<button class="m-aside-header-menu-mobile-close  m-aside-header-menu-mobile-close--skin-dark " id="m_aside_header_menu_mobile_close_btn">
 								<i class="la la-close"></i>
 							</button>
-													
+							<div id="m_header_topbar" class="m-topbar  m-stack m-stack--ver m-stack--general">
+								<div class="m-stack__item m-topbar__nav-wrapper">
+									<ul class="m-topbar__nav m-nav m-nav--inline">
+										@RenderSection("UserProfile", required:false)
+									
+									</ul>
+								</div>
+							</div>													
 						</div>
 					</div>
 				</div>
@@ -92,32 +99,8 @@
 				<!-- BEGIN: Aside Menu -->
 	                <div id="m_ver_menu" class="m-aside-menu  m-aside-menu--skin-dark m-aside-menu--submenu-skin-dark " data-menu-vertical="true" data-menu-scrollable="false" data-menu-dropdown-timeout="500">
 						<ul class="m-menu__nav  m-menu__nav--dropdown-submenu-arrow ">
-							<li class="m-menu__item  m-menu__item--active" aria-haspopup="true" >
-								<a  asp-controller="Home" asp-action="Index" class="m-menu__link ">
-									<i class="m-menu__link-icon flaticon-line-graph"></i>
-									<span class="m-menu__link-title">
-										<span class="m-menu__link-wrap">
-											<span class="m-menu__link-text">
-												Painel central
-											</span>
-										</span>
-									</span>
-								</a>
-							</li>
-							<li class="m-menu__section">
-								<h4 class="m-menu__section-text">
-									Administração
-								</h4>
-								<i class="m-menu__section-icon flaticon-more-v3"></i>
-							</li>
-							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
-								<a  asp-controller="Colaborador" asp-action="Detalhe"  class="m-menu__link m-menu__toggle">
-									<i class="m-menu__link-icon flaticon-users"></i>
-									<span class="m-menu__link-text">
-										Colaborador
-									</span>									
-								</a>							
-							</li>
+							@RenderSection("MenuNavItem",required:false)
+							
 							
 						</ul>
 					</div>
