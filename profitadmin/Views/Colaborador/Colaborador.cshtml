@@ -1,5 +1,37 @@
 @{ Layout = "_appmain"; }
 
+@section MenuNavItem{
+
+        <li class="m-menu__item  m-menu__item--active" aria-haspopup="true" >
+            <a  asp-controller="Home" asp-action="Index" class="m-menu__link ">
+                <i class="m-menu__link-icon flaticon-line-graph"></i>
+                <span class="m-menu__link-title">
+                    <span class="m-menu__link-wrap">
+                        <span class="m-menu__link-text">
+                            Painel central
+                        </span>
+                    </span>
+                </span>
+            </a>
+        </li>
+        <li class="m-menu__section">
+            <h4 class="m-menu__section-text">
+                Administração
+            </h4>
+            <i class="m-menu__section-icon flaticon-more-v3"></i>
+        </li>
+        <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
+            <a  asp-controller="Colaborador" asp-action="Detalhe"  class="m-menu__link m-menu__toggle">
+                <i class="m-menu__link-icon flaticon-users"></i>
+                <span class="m-menu__link-text">
+                    Colaborador
+                </span>									
+            </a>							
+        </li>
+}
+
+
+
 <div class="m-grid__item m-grid__item--fluid m-wrapper">
     <!-- BEGIN: Subheader -->
     <div class="m-subheader ">
